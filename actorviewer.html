@@ -160,7 +160,7 @@
     }
     function getAllAjax(){
         $.ajax({
-            "url": "/actors",
+            "url": "/actors/",
             "method":"GET",
             "data":"",
             "dataType": "JSON",
@@ -177,11 +177,11 @@
         });
 
     }
-    function createActorAjax(book){
+    function createActorAjax(actor){
         //var actor = {"filmography":"Russia4ever", "name":"Liya Silver","age":21}
         console.log(JSON.stringify(actor));
         $.ajax({
-            "url": "/actors",
+            "url": "/actors/",
             "method":"POST",
             "data":JSON.stringify(actor),
             "dataType": "JSON",
@@ -200,7 +200,7 @@
     }
     function updateActorAjax(actor){
         //var actor = {"filmography":"Russia4ever", "name":"Liya Silver","age":21}
-        console.log(JSON.stringify(book));
+        console.log(JSON.stringify(actor));
         $.ajax({
             "url": "/actors/"+encodeURI(actor.id),
             "method":"PUT",
