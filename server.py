@@ -19,7 +19,7 @@ def getAll():
 #curl "http://127.0.0.1:5000/actors/2"
 @app.route('/actors/<int:id>')
 def findById(id):
-    foundActor = actorDAO.findByID(id)
+    foundActor = ActorDAO.findByID(id)
 
     return jsonify(foundActor)
 
@@ -35,7 +35,7 @@ def create():
         "name": request.json['name'],
         "age": request.json['age'],
     }
-    addedactor = ActorDAODAO.create(actor)
+    addedactor = ActorDAO.create(actor)
     
     return jsonify(addedactor)
 
@@ -58,7 +58,7 @@ def update(id):
         foundActor['name'] = reqJson['name']
     if 'age' in reqJson:
         foundActor['age'] = reqJson['age']
-    ActorDAODAO.update(id,foundActor)
+    ActorDAO.update(id,foundActor)
     return jsonify(foundActor)
         
 
