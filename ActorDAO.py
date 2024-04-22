@@ -42,7 +42,7 @@ class ActorDAO:
         results = cursor.fetchall()
         returnArray = []
         for result in results:
-            returnArray.append(self.convertToDict(result))
+            returnArray.append(self.convertToDictionary(result))
 
         self.closeAll()
         return returnArray
