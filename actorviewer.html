@@ -152,9 +152,9 @@
         var form = document.getElementById('createUpdateForm')
         var actor = {}
         actor.id = form.querySelector('input[name="id"]').value
-        actor.title = form.querySelector('input[name="filmography"]').value
-        actor.author = form.querySelector('input[name="name"]').value
-        actor.price = parseInt(form.querySelector('input[name="age"]').value,10)
+        actor.filmography = form.querySelector('input[name="filmography"]').value
+        actor.name = form.querySelector('input[name="name"]').value
+        actor.age = parseInt(form.querySelector('input[name="age"]').value,10)
         console.log(JSON.stringify(actor))
         return actor
     }
