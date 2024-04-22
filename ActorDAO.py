@@ -4,7 +4,7 @@
 
 import mysql.connector
 import dbconfig as cfg
-class ActorDAO:
+class actorDAO:
     connection =""
     cursor =""
     host =""
@@ -60,7 +60,7 @@ class ActorDAO:
     
     def create(self, actor):
         cursor = self.getCursor()
-        sql="insert into actor (filmography,name, age) values (%s,%s,%s)"
+        sql="insert into actor (filmography, name, age) values (%s,%s,%s)"
         values = (actor.get("filmography"), actor.get("name"), actor.get("age"))
         cursor.execute(sql, values )
 
@@ -92,13 +92,13 @@ class ActorDAO:
         print("delete done")
         
 
-    def convertToDictionary(self, resultLine):
+    def convertToDictionary(self, result):
         actorKeys = ["id", "filmography", "name", "age"]
         actor = {}
         currentkey = 0
-        for attrib in resultLine:
+        for attrib in result:
             actor[actorKeys[currentkey]] = attrib
             currentkey = currentkey + 1 
         return actor
 
-ActorDAO = ActorDAO()
+ActorDAO = actorDAO()
